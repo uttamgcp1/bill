@@ -264,11 +264,11 @@ class PDF(FPDF):
         self.set_y(-80)
 
         self.cell(140, 5, '', align='L', border=1)
-        self.cell(55, 5, 'Total(Rs.)          : ' + str(getTotal.total), align='L', border=1)
+        self.cell(55, 5, 'Total(Rs.)          : ' + str(getTotal.total), align='R', border=1)
         self.ln(5)
 
         self.cell(140, 5, '', align='R', border=0)
-        self.cell(55, 5, "Tex(%)               : " + str(tex_enter.get()), align='L', border=1)
+        self.cell(55, 5, "Tex(%)               : " + str(tex_enter.get()), align='R', border=1)
         self.ln(5)
 
         self.cell(140, 5, '', align='L', border=0)
@@ -296,13 +296,13 @@ class PDF(FPDF):
 
         self.set_font('Arial', '', 12)
         # Background color
-        self.set_fill_color(200, 220, 255)
+        self.set_fill_color(201, 220, 255)
         # Title
         self.cell(20, 6, 'Sr No', 0, 0, 'C', 1)
         self.cell(50, 6, 'Product Name', 0, 0, 'C', 1)
         self.cell(22, 6, 'HSN Code', 0, 0, 'C', 1)
         self.cell(30, 6, 'Quantity', 0, 0, 'C', 1)
-        self.cell(30, 6, 'Rate', 0, 0, 'C', 1)
+        self.cell(30, 6, 'Rates', 0, 0, 'C', 1)
         self.cell(43, 6, 'Total', 0, 0, 'C', 1)
         # Line break
         self.ln(10)
@@ -331,7 +331,7 @@ def printt(Products_array):
         pdf.bill_titles()
         pdf.add_products(Products_array)
 
-        pdf.output("/Users/uttampagda/Desktop/Invoice/" + str(customer_name.get()+"_"+invoice_no.get()) + ".pdf")
+        pdf.output("/Users/uttampagda/Desktop/Invoice/Bill" + str(customer_name.get()+"_"+invoice_no.get()) + ".pdf")
     else:
         pass
 
@@ -349,7 +349,7 @@ cus_detail_frame = Frame(root, bg=frame_color)
 cus_detail_frame.place(x=0, y=25, height=150, width=651)
 
 cus_exdetail_frame = Frame(root, bg=frame_color)
-cus_exdetail_frame.place(x=650, y=25, height=150, width=650)
+cus_exdetail_frame.place(x=650, y=25, height=150, width=651)
 
 add_pro_frame = Frame(root, bg=frame_color)
 add_pro_frame.place(x=0, y=175, height=100, width=1300)
@@ -361,7 +361,7 @@ get_total_frame = Frame(root, bg=frame_color)
 get_total_frame.place(x=0, y=525, height=75, width=1300)
 
 print_frame = Frame(root, bg=frame_color)
-print_frame.place(x=0, y=650, height=150, width=1300)
+print_frame.place(x=0, y=650, height=150, width=1301)
 
 
 # ==================================== labels ==============================
@@ -383,7 +383,7 @@ add1_lebel.place(x=5, y=65)
 add1_entry = Entry(cus_detail_frame, textvariable=add_line2)
 add1_entry.place(x=190, y=65)
 
-cus_gst_lebel = Label(cus_detail_frame, text="Customer GST No:", font=("courier", 17))
+cus_gst_lebel = Label(cus_detail_frame, text="Customer GST Number:", font=("courier", 17))
 cus_gst_lebel.place(x=5, y=95)
 cus_gst_entry = Entry(cus_detail_frame, textvariable=cus_gst_no)
 cus_gst_entry.place(x=190, y=95)
@@ -418,7 +418,7 @@ hsn_lebel.place(x=285, y=5)
 hsn_entry = Entry(add_pro_frame, textvariable=hsn_code)
 hsn_entry.place(x=390, y=5, width=80)
 
-qty_lebel = Label(add_pro_frame, text="Quentity:", font=("courier", 17))
+qty_lebel = Label(add_pro_frame, text="Quentity:", font=("Times new roman", 17))
 qty_lebel.place(x=510, y=5)
 qty_entry = Entry(add_pro_frame, textvariable=product_qty)
 qty_entry.place(x=620, y=5, width=100)
