@@ -349,7 +349,7 @@ cus_detail_frame = Frame(root, bg=frame_color)
 cus_detail_frame.place(x=0, y=25, height=150, width=650)
 
 cus_exdetail_frame = Frame(root, bg=frame_color)
-cus_exdetail_frame.place(x=650, y=25, height=151, width=651)
+cus_exdetail_frame.place(x=651, y=25, height=151, width=651)
 
 add_pro_frame = Frame(root, bg=frame_color)
 add_pro_frame.place(x=0, y=175, height=100, width=1300)
@@ -361,19 +361,19 @@ get_total_frame = Frame(root, bg=frame_color)
 get_total_frame.place(x=0, y=525, height=75, width=1300)
 
 print_frame = Frame(root, bg=frame_color)
-print_frame.place(x=0, y=650, height=150, width=1300)
+print_frame.place(x=0, y=651, height=151, width=1301)
 
 
 # ==================================== labels ==============================
-shop_name_lebel = Label(shop_frame, text="Shree Raj Marble", font=("arial", 23))
+shop_name_lebel = Label(shop_frame, text="Integer I", font=("arial", 23))
 shop_name_lebel.place(x=550, y=-5)
 
-cus_name_lebel = Label(cus_detail_frame, text="Customer name:", font=("courier", 17))
+cus_name_lebel = Label(cus_detail_frame, text="Customer name:", font=("courier", 18))
 cus_name_lebel.place(x=5, y=5)
 cus_name_entry = Entry(cus_detail_frame, textvariable=customer_name)
 cus_name_entry.place(x=190, y=5)
 
-add_lebel = Label(cus_detail_frame, text="Address line 1:", font=("courier", 17))
+add_lebel = Label(cus_detail_frame, text="Address line 1:", font=("courier", 18))
 add_lebel.place(x=5, y=35)
 add_entry = Entry(cus_detail_frame, textvariable=add_line1)
 add_entry.place(x=190, y=35)
