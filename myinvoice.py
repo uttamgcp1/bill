@@ -8,11 +8,11 @@ import tkinter.messagebox as tkMessageBox
 from fpdf import FPDF
 
 root = Tk()
-root.title("Integer-i Billing Solutions")
+root.title("Integer-i Bill Solutions")
 
-root.geometry("1300x800")
+root.geometry("1300x801")
 root.resizable(0, 0)
-root.config(bg="#DEEAEF")
+root.config(bg="#DEEEEF")
 # ========================================Variables==============================
 
 product_name = StringVar()
@@ -47,7 +47,7 @@ def SubmitData():
 
     for data in (Products_array):
         tree.insert('', 'end', values=(data))
-    product_rate.set("")
+    product_rate.set(" ")
 
 def getTotal():
     u=len(Products_array)
@@ -221,12 +221,12 @@ class PDF(FPDF):
         self.set_font('Arial', 'B', 15)
         # Move to the right
 
-        self.cell(195,8, 'TAX INVOICE', border=True, align='C')
+        self.cell(195,8, 'TAX BILL', border=True, align='C')
         self.ln(10)
 
         self.set_font('Arial','',10)
         self.cell(85,10,'From,',align='L')
-        self.cell(35, 10, 'Consignee,', align='R')
+        self.cell(35, 10, 'Consignee:,', align='R')
         self.ln(10)
 
         self.set_font('Arial', 'B', 10)
@@ -263,11 +263,11 @@ class PDF(FPDF):
         # Position at 1.5 cm from bottom
         self.set_y(-80)
 
-        self.cell(140, 5, '', align='L', border=0)
+        self.cell(140, 5, '', align='L', border=1)
         self.cell(55, 5, 'Total(Rs.)          : ' + str(getTotal.total), align='L', border=1)
         self.ln(5)
 
-        self.cell(140, 5, '', align='L', border=0)
+        self.cell(140, 5, '', align='R', border=0)
         self.cell(55, 5, "Tex(%)               : " + str(tex_enter.get()), align='L', border=1)
         self.ln(5)
 
