@@ -450,7 +450,7 @@ rate_lebel = Label(print_frame, text="© Copyright Integer-i. All Rights Reserve
 rate_lebel.place(x=10, y=125)
 
 
-product_name.set("u")
+product_name.set("uttam")
 product_qty.set("2")
 product_rate.set("")
 hsn_code.set("4")
@@ -458,9 +458,9 @@ tex_enter.set("5")
 customer_name.set('uttam')
 add_line1.set('bghghgbdn bd')
 add_line2.set('gfgfg')
-cus_gst_no.set('45436356375375')
-date.set('10/7/14')
-invoice_no.set(343453)
+cus_gst_no.set('4543635637')
+date.set('10/7/15')
+invoice_no.set(33)
 state_code.set('434')
 
 
