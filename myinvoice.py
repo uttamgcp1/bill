@@ -207,7 +207,7 @@ def delete_data():
             print(type(selecteditem[4]))
             for item in range(len(Products_array)):
                 print(Products_array[item][4],float(selecteditem[4]))
-                if ((Products_array[item])[0] == selecteditem[0]):
+                if ((Products_array[item])[1] == selecteditem[0]):
                     if ((Products_array[item])[4] == float(selecteditem[4])):
                      break
             del (Products_array[item])
@@ -218,7 +218,7 @@ class PDF(FPDF):
         self.set_font('Arial', '', 8)
         self.cell(195, 5, '(Original / Duplicate)', border=0, align='R')
         self.ln(5)
-        self.set_font('Arial', 'B', 15)
+        self.set_font('Arial', 'I', 16)
         # Move to the right
 
         self.cell(195,8, 'TAX BILL', border=True, align='C')
@@ -250,7 +250,7 @@ class PDF(FPDF):
 
         self.cell(65, 5, 'State Code : ', align='L', border=1)
         self.cell(65, 5, "Date: " + str(date.get()), align='L', border=1)
-        self.cell(65, 5, "Invoic no. : " + str(invoice_no.get()), align='L', border=1)
+        self.cell(65, 5, "Invoic number. : " + str(invoice_no.get()), align='L', border=1)
 
 
 
@@ -263,7 +263,7 @@ class PDF(FPDF):
         # Position at 1.5 cm from bottom
         self.set_y(-80)
 
-        self.cell(140, 5, '', align='L', border=1)
+        self.cell(140, 5, '', align='R', border=1)
         self.cell(55, 5, 'Total(Rs.)          : ' + str(getTotal.total), align='R', border=1)
         self.ln(5)
 
@@ -322,7 +322,7 @@ class PDF(FPDF):
 
 
 def printt(Products_array):
-    MsgBox = tk.messagebox.askquestion('Print PDF?', 'Are you sure you want to Print the PDF',icon='question')
+    MsgBox = tk.messagebox.askquestion('Print PDF?', 'Are you sure you want to rint the PDF',icon='question')
     if MsgBox == 'yes':
         pdf = PDF(format='A4', unit='mm')
         pdf.alias_nb_pages()
@@ -378,7 +378,7 @@ add_lebel.place(x=5, y=35)
 add_entry = Entry(cus_detail_frame, textvariable=add_line1)
 add_entry.place(x=190, y=35)
 
-add1_lebel = Label(cus_detail_frame, text="Address line 2:", font=("courier", 17))
+add1_lebel = Label(cus_exdetail_frame, text="Address line 2:", font=("courier", 17))
 add1_lebel.place(x=5, y=65)
 add1_entry = Entry(cus_detail_frame, textvariable=add_line2)
 add1_entry.place(x=190, y=65)
@@ -465,10 +465,10 @@ state_code.set('434')
 
 
 style = ttk.Style()
-style.configure("Treeview", rowheight=30, background="silver", font=('Calibri', 20))
+style.configure("Treeview", rowheight=50, background="silver", font=('Calibri', 20))
 scrollbarx = Scrollbar(show_items_frame, orient=HORIZONTAL)
 scrollbary = Scrollbar(show_items_frame, orient=VERTICAL)
-tree = ttk.Treeview(show_items_frame, columns=("Product Name", "HSN code", "Quantity", "Rate", "Total"), height=240,
+tree = ttk.Treeview(show_items_frame, columns=("Product", "HSN code", "Quantity", "Rate", "Total"), height=240,
                     selectmode="extended", yscrollcommand=scrollbary.set, xscrollcommand=scrollbarx.set)
 scrollbary.config(command=tree.yview)
 scrollbary.pack(side=RIGHT, fill=Y)
