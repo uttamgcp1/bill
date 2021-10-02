@@ -10,7 +10,7 @@ from fpdf import FPDF
 root = Tk()
 root.title("Integer-i Billing Solutions")
 
-root.geometry("1300x800")
+root.geometry("1200x800")
 root.resizable(0, 0)
 root.config(bg="#DEEAEF")
 # ========================================Variables==============================
@@ -195,7 +195,7 @@ def getTotal():
 
 def delete_data():
     if not tree.selection():
-        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
+        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="ining")
     else:
         result = tkMessageBox.askquestion('', 'Are you sure you want to delete this item?', icon="warning")
         if result == 'yes':
@@ -401,7 +401,7 @@ invoice_no_entry.place(x=190, y=35)
 state_code_lebel = Label(cus_exdetail_frame, text="State_code", font=("courier", 17))
 state_code_lebel.place(x=5, y=65)
 state_code_lebel_entry = Entry(cus_exdetail_frame, textvariable=state_code)
-state_code_lebel_entry.place(x=190, y=65)
+state_code_lebel_entry.place(x=180, y=65)
 
 enter_tex_lebel = Label(cus_exdetail_frame, text="Tex (%):", font=("courier", 17))
 enter_tex_lebel.place(x=5, y=95)
@@ -441,7 +441,7 @@ print_bill_button = Button(print_frame, text="Print bill",command= lambda : prin
 print_bill_button.place(x=574, y=10)
 
 add_database_button = Button(print_frame, text="Add to Database", padx=7, pady=5)
-add_database_button.place(x=550, y=50)
+add_database_button.place(x=650, y=50)
 
 quit_button = Button(print_frame, text="Quit", command=root.destroy,padx=3,pady=2)
 quit_button.place(x=1260, y=90)
@@ -480,7 +480,7 @@ tree.heading('Quantity', text="Quantity", anchor=W)
 tree.heading('Rate', text="Rate", anchor=W)
 tree.heading('Total', text="Total", anchor=W)
 tree.column('#0', width=0)
-tree.column('#1', stretch=NO, minwidth=0, width=300, anchor=tk.CENTER)
+tree.column('#1', stretch=NO, minwidth=0, width=320, anchor=tk.CENTER)
 tree.column('#2', stretch=NO, minwidth=0, width=200, anchor=tk.CENTER)
 tree.column('#3', stretch=NO, minwidth=0, width=200, anchor=tk.CENTER)
 tree.column('#4', stretch=NO, minwidth=0, width=200, anchor=tk.CENTER)
