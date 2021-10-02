@@ -221,7 +221,7 @@ class PDF(FPDF):
         self.set_font('Arial', 'B', 15)
         # Move to the right
 
-        self.cell(195,8, 'TAX INVOICE', border=True, align='C')
+        self.cell(195,8, 'TAX bill', border=True, align='C')
         self.ln(10)
 
         self.set_font('Arial','',10)
@@ -235,7 +235,7 @@ class PDF(FPDF):
         self.ln(5)
 
         self.set_font('Arial', '', 9)
-        self.cell(100, 5, 'Address: Plot No. 16, Ranjeet sagar road,', align='L', border=1)
+        self.cell(100, 5, 'Address: Plot No. 17, Ranjeet sagar road,', align='L', border=1)
         self.cell(95, 5, "Address: "+str(add_line1.get()), align='L', border=1)
         self.ln(5)
 
@@ -243,7 +243,7 @@ class PDF(FPDF):
         self.cell(95, 5, "                "+str(add_line2.get()), align='L', border=1)
         self.ln(5)
 
-        self.cell(100, 5, 'GST : 59358958594849684', align='L', border=1)
+        self.cell(100, 5, 'GST : ', align='L', border=1)
         self.cell(95, 5, "Buyer's GST : "+ str(cus_gst_no.get()), align='L', border=1)
         self.ln(5)
         self.ln(5)
