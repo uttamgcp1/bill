@@ -56,9 +56,9 @@ def getTotal():
        total= total + Products_array[i][4]
     getTotal.total=total
 
-    total_label = Label(get_total_frame, text="Total:", font=("courier", 17))
+    total_label = Label(get_total_frame, text="Total:", font=("Times new roman", 18))
     total_label.place(x=5, y=15)
-    total_label_num = Label(get_total_frame, text=total, font=("courier", 17))
+    total_label_num = Label(get_total_frame, text=total, font=("Times new roman", 18))
     total_label_num.place(x=75, y=15,width=250)
 
              # Tex
@@ -96,7 +96,7 @@ def getTotal():
                 return units[number] + " Thousand "
 
             elif (lakhvalue == 1):
-                return units[number] + " Lakh "
+                return units[number] + " carore "
 
             else:
                 return (units[number])
@@ -235,11 +235,11 @@ class PDF(FPDF):
         self.ln(5)
 
         self.set_font('Arial', '', 9)
-        self.cell(100, 5, 'Address: Plot No. 16, Ranjeet sagar road,', align='L', border=1)
+        self.cell(100, 5, 'Address: Plot No. 16,  sagar road,', align='L', border=1)
         self.cell(95, 5, "Address: "+str(add_line1.get()), align='L', border=1)
         self.ln(5)
 
-        self.cell(100, 5, '                Jamnagar Gujarat, India.', align='L', border=1)
+        self.cell(100, 5, '                Jamnagar Gujarat, .', align='L', border=1)
         self.cell(95, 5, "                "+str(add_line2.get()), align='L', border=1)
         self.ln(5)
 
@@ -250,7 +250,7 @@ class PDF(FPDF):
 
         self.cell(65, 5, 'State Code : ', align='L', border=1)
         self.cell(65, 5, "Date: " + str(date.get()), align='L', border=1)
-        self.cell(65, 5, "Invoice no. : " + str(invoice_no.get()), align='L', border=1)
+        self.cell(65, 5, "Invoic no. : " + str(invoice_no.get()), align='L', border=1)
 
 
 
@@ -343,10 +343,10 @@ def printt(Products_array):
 
 # =================================== Frames======================================
 shop_frame = Frame(root, bg=frame_color)
-shop_frame.place(x=0, y=0, height=25, width=1300)
+shop_frame.place(x=0, y=0, height=25, width=1301)
 
 cus_detail_frame = Frame(root, bg=frame_color)
-cus_detail_frame.place(x=0, y=25, height=150, width=650)
+cus_detail_frame.place(x=0, y=25, height=150, width=651)
 
 cus_exdetail_frame = Frame(root, bg=frame_color)
 cus_exdetail_frame.place(x=650, y=25, height=150, width=650)
@@ -368,7 +368,7 @@ print_frame.place(x=0, y=650, height=150, width=1300)
 shop_name_lebel = Label(shop_frame, text="Shree Raj Marble", font=("arial", 23))
 shop_name_lebel.place(x=550, y=-5)
 
-cus_name_lebel = Label(cus_detail_frame, text="Customer name:", font=("courier", 17))
+cus_name_lebel = Label(cus_detail_frame, text="Customer name:", font=("Times new roman", 17))
 cus_name_lebel.place(x=5, y=5)
 cus_name_entry = Entry(cus_detail_frame, textvariable=customer_name)
 cus_name_entry.place(x=190, y=5)
