@@ -331,7 +331,7 @@ def printt(Products_array):
         pdf.bill_titles()
         pdf.add_products(Products_array)
 
-        pdf.output("/Users/uttampagda/Desktop/Invoice/" + str(customer_name.get()+"_"+invoice_no.get()) + ".pdf")
+        pdf.output("/Users/uttampagda/Desktop/Invoice/bill" + str(customer_name.get()+"_"+invoice_no.get()) + ".pdf")
     else:
         pass
 
@@ -349,7 +349,7 @@ cus_detail_frame = Frame(root, bg=frame_color)
 cus_detail_frame.place(x=0, y=25, height=150, width=650)
 
 cus_exdetail_frame = Frame(root, bg=frame_color)
-cus_exdetail_frame.place(x=650, y=25, height=150, width=650)
+cus_exdetail_frame.place(x=650, y=25, height=151, width=651)
 
 add_pro_frame = Frame(root, bg=frame_color)
 add_pro_frame.place(x=0, y=175, height=100, width=1300)
