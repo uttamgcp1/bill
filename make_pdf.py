@@ -5,13 +5,13 @@ from datetime import date
 class PDF(FPDF):
     def header(self):
         # Arial bold 15
-        self.set_font('Arial', 'B', 15)
+        self.set_font('Times new Romen', 'B/I', 17)
         # Move to the right
         self.cell(0, 10, 'Shree Raj Marble', border=False, align='L')
         self.line(10, 20, 100, 20)
         self.set_font('Arial', style='B', size=10)
         self.ln(10)
-        self.cell(0, 10, 'Subhas park,Plot No. 16, Ranjeet sagar road, Jamnagar Gujarat,India', border=False, align='L')
+        self.cell(0, 10, 'Subhas park,Plot No. 16, Ranjeet sagar road, Jamnagar Gujarat', border=False, align='L')
         self.ln(5)
         self.cell(0, 10, "GST No : "+str(), border=False, align='L')
         self.ln(5)
@@ -19,9 +19,9 @@ class PDF(FPDF):
         self.ln(10)
         self.cell(0, 10, "Invoice Number: 123456", border=False, align='R')
         self.ln(5)
-        self.cell(0, 10, "Customer Name: Meet Vaghasiya", border=False, align='R')
+        self.cell(0, 10, "Customer Name: Meet Kumar", border=False, align='R')
         self.ln(5)
-        self.cell(0, 10, "Contact Number: 1234567890", border=False, align='R')
+        self.cell(0, 10, "Contact Number: 14567890", border=False, align='R')
         self.ln(5)
         self.cell(0, 10, "Date: "+str(date.today()), border=False, align='R')
         self.ln(10)
