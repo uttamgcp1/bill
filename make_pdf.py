@@ -5,13 +5,13 @@ from datetime import date
 class PDF(FPDF):
     def header(self):
         # Arial bold 15
-        self.set_font('Times new Romen', 'B/I', 17)
+        self.set_font('Times new Romen', 'B', 17)
         # Move to the right
         self.cell(0, 10, 'Shree Raj Marble', border=False, align='L')
         self.line(10, 20, 100, 20)
         self.set_font('Arial', style='B', size=10)
         self.ln(10)
-        self.cell(0, 10, 'Subhas park,Plot No. 16, Ranjeet sagar road, Jamnagar Gujarat', border=False, align='L')
+        self.cell(0, 10, 'Subhas park,Plot No. 17, Ranjeet sagar road, Jamnagar Gujarat', border=False, align='L')
         self.ln(5)
         self.cell(0, 10, "GST No : "+str(), border=False, align='L')
         self.ln(5)
@@ -39,7 +39,7 @@ class PDF(FPDF):
         # Arial 12
         self.set_font('Arial', '', 12)
         # Background color
-        self.set_fill_color(200, 220, 255)
+        self.set_fill_color(201, 221, 235)
         # Title
         self.cell(20, 6, 'Sr No', 0, 0, 'L', 1)
         self.cell(40, 6, 'Product Name', 0, 0, 'L', 1)
@@ -58,7 +58,7 @@ class PDF(FPDF):
             self.cell(20, 6, product[1], 0, 0, 'L')
             self.cell(40, 6, str(product[2]), 0, 0, 'L')
             self.cell(30, 6, str(product[3]), 0, 0, 'L')
-            self.cell(40, 6, str(product[4]), 0, 0, 'L')
+            self.cell(41, 6, str(product[4]), 0, 0, 'L')
             self.ln(5)
             self.line(10, 20, 200, 20)
             i += 1
@@ -76,7 +76,7 @@ class PDF(FPDF):
 
 
 
- self.cell(w=75,h=7,txt="Shree Raj marble, \nPlot No. 16, Ranjeet sagar road, \nJamnagar Gujarat, India",border=1,align='L')
+ self.cell(w=75,h=7,txt="Shree Raj marble, \nPlot No. 16, Ranjit sagar road, \nJamnagar Gujarat, India",border=1,align='L')
         self.cell(w=75, h=7,txt=str(customer_name.get()) + "\n" + str(add_line1.get()) + "\n" + str(add_line2.get()),border=1, align='L')
 
         self.ln(10)
